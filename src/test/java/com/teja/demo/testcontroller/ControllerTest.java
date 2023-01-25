@@ -13,6 +13,7 @@ import com.teja.demo.controller.ProductController;
 import com.teja.demo.entity.Product;
 import com.teja.demo.service.ProductService;
 
+//@RunWith(MockitoJUnitRunner.class)
 @ExtendWith(MockitoExtension.class)
 public class ControllerTest {
 

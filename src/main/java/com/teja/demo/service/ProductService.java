@@ -1,17 +1,16 @@
 package com.teja.demo.service;
 
+import static org.hibernate.tool.schema.SchemaToolingLogging.LOGGER;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.teja.demo.entity.Product;
 import com.teja.demo.repository.ProductRepository;
-
-import static org.hibernate.tool.schema.SchemaToolingLogging.LOGGER;
 
 @Service
 public class ProductService {
@@ -32,9 +31,9 @@ public class ProductService {
 	}
 
 	public Optional<Product> getProductById(int id) {
-		Optional<Product>  product = repository.findById(id);
+		Optional<Product> product = repository.findById(id);
 		LOGGER.info("REPO LAYER");
-return product;
+		return product;
 	}
 
 	public Product getProductByName(String name) {
@@ -46,8 +45,8 @@ return product;
 		return "product removed" + id;
 	}
 
-	public Product updateProduct(Product product) {
-		Product existingProduct = repository.findById(product.getId()).orElse(null);
+	public Product updateProduct(Product product,int id) {
+		Product existingProduct = repository.findById(id).orElse(null);
 
 		existingProduct.setName(product.getName());
 		existingProduct.setQuantity(product.getQuantity());

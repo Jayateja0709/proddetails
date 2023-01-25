@@ -47,5 +47,5 @@ public class ServiceTest {
 
 		assertEquals(3, list.size());
 
-		}
+	}
 }

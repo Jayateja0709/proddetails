@@ -2,6 +2,7 @@ package com.teja.demo.controller;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,7 @@ public class ProductController {
 	@GetMapping("/product/{id}")
 	public Optional<Product> findProductById(@PathVariable int id) {
 
-		Optional<Product>  product = service.getProductById(id);
+		Optional<Product> product = service.getProductById(id);
 		LOGGER.info("request going to service layer");
 		System.out.println("going to service");
 		return product;
@@ -83,7 +84,7 @@ public class ProductController {
 
 	@PutMapping("/update/{id}")
 	public Product updateProduct(@RequestBody Product product, @PathVariable int id) {
-		return service.updateProduct(product);
+		return service.updateProduct(product,id);
 	}
 
 	@DeleteMapping("/delete/{id}")
