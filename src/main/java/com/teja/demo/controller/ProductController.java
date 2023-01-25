@@ -49,6 +49,7 @@ public class ProductController {
 		LOGGER.info("request going to service layer");
 		System.out.println("going to service");
 		return product;
+		// dfdsfkds
 
 	}
 
@@ -84,7 +85,7 @@ public class ProductController {
 
 	@PutMapping("/update/{id}")
 	public Product updateProduct(@RequestBody Product product, @PathVariable int id) {
-		return service.updateProduct(product,id);
+		return service.updateProduct(product, id);
 	}
 
 	@DeleteMapping("/delete/{id}")
